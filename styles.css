@@ -1,0 +1,99 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EAECEE; /* Updated light gray background */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Styling for header */
+.header {
+    background-color: #2C3E50; /* Updated dark blue background */
+    color: #fff; /* White text */
+    padding: 20px 0;
+    border-bottom: 1px solid #34495E; /* Updated border color */
+}
+
+.heading {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Styling for paragraphs */
+.paragraph {
+    color: #333;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Styling for button */
+.button {
+    color: #fff;
+    padding: 12px 24px;
+    background-color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color:#EAECEE;;
+}
+
+/* Styling for the container */
+.container {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ECF0F1; /* Updated light gray background */
+    border: 2px solid #2C3E50; /* Updated border color */
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Styling for the text */
+.text {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styling for the flowers */
+.flower {
+    width: 10px;
+    height: 10px;
+    background-image: url('/Users/radhika/Desktop/flower.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: -30px;
+}
+
+/* Positioning for the flowers */
+.flower1 {
+    left: -50px;
+}
+
+.flower2 {
+    right: -50px;
+}
+
+.flower3 {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}

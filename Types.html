@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerabilities Awareness</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EAECEE; /* Updated light gray background */
+            color: #333; /* Updated text color */
+        }
+
+        header {
+            background-color: #2C3E50; /* Updated dark blue background */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #34495E; /* Darker blue background */
+            overflow: hidden;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff; /* White text */
+            font-weight: bold;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ECF0F1; /* Light gray background */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #2C3E50; /* Dark blue background */
+            color: #fff; /* White text */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vulnerabilities Awareness</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#types">Types of Vulnerabilities</a></li>
+            <li><a href="#prevention">Prevention Measures</a></li>
+            <li><a href="#incidents">Incidents</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h2>Welcome to our Website</h2>
+        <p>Learn how to protect yourself from Vulnerabilities and keep your website safe .</p>
+    </section>
+    <section id="types">
+        <h2>Types of Vulnerabilities</h2>
+        <p>A vulnerability in simple terms is a weakness or flaw in a system or software that can be exploited by attackers to compromise its security and gain unauthorized access, steal data, or cause harm. It's like leaving a door unlocked or a window open, making it easier for someone with malicious intent to break in and cause damage. Here are some common types of Vulnerabilities:</p>
+        <ul>
+            <li>
+                <h3>SQL Injection (SQLi)</h3>
+                <p>Exploiting vulnerabilities in SQL queries to gain unauthorized access to databases.</p>
+            </li>
+            <li>
+                <h3>Cross-Site Scripting (XSS)</h3>
+                <p>Injecting malicious scripts into web pages viewed by other users, allowing attackers to steal cookies, session tokens, or other sensitive information.</p>
+            </li>
+            <li>
+                <h3>Security Misconfigurations</h3>
+                <p>Poorly configured security settings or defaults that expose sensitive information, resources, or services to attackers.</p>
+            </li>
+            <li>
+                <h3>Broken Access Control </h3>
+                <p>Flaws in authentication mechanisms that allow attackers to bypass authentication, hijack user sessions, or gain unauthorized access to user accounts.</p>
+            </li>
+            <li>
+                <h3>Insecure Direct Object References (IDOR)</h3>
+                <p>Accessing unauthorized data or resources by manipulating parameters or object references in URLs or requests.</p>
+            </li>
+        </ul>
+    </section>
+    <section id="prevention">
+        <h2>Prevention Measures</h2>
+        <p>Protecting your website from vulnerabilities is crucial. Here are comprehensive prevention measures:</p>
+
+        <h3>SQL Injection (SQLi)</h3>
+        <ul>
+            <li>Use parameterized queries and prepared statements to prevent SQL injection attacks.</li>
+            <li>Implement input validation to filter and sanitize user inputs.</li>
+            <li>Regularly update your database management system and application frameworks to patch known vulnerabilities.</li>
+            <li>Apply the principle of least privilege to restrict database access rights.</li>
+        </ul>
+
+        <h3>Cross-Site Scripting (XSS)</h3>
+        <ul>
+            <li>Encode user input and output to prevent XSS attacks.</li>
+            <li>Use Content Security Policy (CSP) to control which scripts can be executed in your web application.</li>
+            <li>Audit and sanitize user-generated content before displaying it to other users.</li>
+            <li>Implement proper input validation and output encoding to prevent XSS attacks.</li>
+        </ul>
+
+        <h3>Security Misconfigurations</h3>
+        <ul>
+            <li>Regularly audit and review your server and application configurations.</li>
+            <li>Follow security best practices and guidelines provided by your platform or framework.</li>
+            <li>Secure sensitive files and directories with appropriate permissions.</li>
+            <li>Use automated tools to scan your application for common security misconfigurations.</li>
+        </ul>
+
+        <h3>Broken Access Control </h3>
+        <ul>
+            <li>Implement proper authentication and authorization mechanisms.</li>
+            <li>Enforce access controls at both the application and database levels.</li>
+            <li>Audit and monitor user access to sensitive resources and data.</li>
+            <li>Regularly review and update access control policies as your application evolves.</li>
+        </ul>
+
+        <h3>Insecure Direct Object References (IDOR)</h3>
+        <ul>
+            <li>Use indirect object references or access controls to protect sensitive data.</li>
+            <li>Do not expose internal object identifiers directly in URLs or requests.</li>
+            <li>Implement proper access controls and authorization checks.</li>
+            <li>Regularly audit and review your application for potential IDOR vulnerabilities.</li>
+        </ul>
+    </section>
+    <section id="incidents">
+ 
+        <p><b>If you encounter any security incidents or vulnerabilities, please report them immediately to our security team at <a href="mailto:security@example.com">security@example.com</a>.</b></p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have questions or need assistance, please contact us at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Vulnerabilities Awareness</p>
+    </footer>
+</body>
+</html>

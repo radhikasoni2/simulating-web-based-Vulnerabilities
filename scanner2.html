@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Vulnerability Scanner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #2C3E50;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2C3E50;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        #results p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        #results p.error {
+            color: red;
+        }
+
+        #results p.success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Website Vulnerability Scanner</h1>
+        <label for="website_urls">Enter website URLs (one per line):</label>
+        <textarea id="website_urls" rows="10" cols="50"></textarea>
+        <button onclick="displayAlert()">Scan Websites</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function displayAlert() {
+            alert("Please note that scanning external websites without permission may be illegal. Make sure you have proper authorization before scanning any website.");
+            scanWebsites();
+        }
+
+        function scanWebsites() {
+            var websitesTextArea = document.getElementById("website_urls");
+            var websites = websitesTextArea.value.split('\n').filter(Boolean);
+
+            var resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+
+            for (var i = 0; i < websites.length; i++) {
+                var website = websites[i].trim();
+                var resultPara = document.createElement("p");
+
+                if (!website) {
+                    resultPara.textContent = "Invalid website URL";
+                    resultPara.classList.add("error");
+                    resultsDiv.appendChild(resultPara);
+                    continue;
+                }
+
+                resultPara.textContent = "Scanning " + website + "...";
+                resultsDiv.appendChild(resultPara);
+
+                fetchWebsite(website, resultPara);
+            }
+        }
+
+        function fetchWebsite(website, resultPara) {
+            fetch(website)
+                .then(response => response.text())
+                .then(html => {
+                    var vulnerabilities = findVulnerabilities(html, website);
+                    displayResults(vulnerabilities, resultPara);
+                })
+                .catch(error => {
+                    resultPara.textContent = "Error accessing " + website + ": " + error;
+                    resultPara.classList.add("error");
+                });
+        }
+
+        function findVulnerabilities(html, website) {
+            var vulnerabilities = [];
+
+            // Example vulnerability checks (replace with your actual checks)
+            if (html.includes("<script>")) {
+                vulnerabilities.push({
+                    "website": website,
+                    "vulnerability": "Cross-Site Scripting (XSS)",
+                    "risk": "High",
+                    "mitigation": "Implement proper input validation and output encoding to prevent XSS attacks."
+                });
+            }
+
+            return vulnerabilities;
+        }
+
+        function displayResults(vulnerabilities, resultPara) {
+            if (vulnerabilities.length === 0) {
+                resultPara.textContent = "No vulnerabilities found.";
+                resultPara.classList.add("success");
+                return;
+            }
+
+            var resultsText = "Scan Results:\n\n";
+            vulnerabilities.forEach(function (vulnerability) {
+                resultsText += "Website: " + vulnerability.website + "\n";
+                resultsText += "Vulnerability: " + vulnerability.vulnerability + "\n";
+                resultsText += "Risk Level: " + vulnerability.risk + "\n";
+                resultsText += "Mitigation: " + vulnerability.mitigation + "\n\n";
+            });
+
+            resultPara.textContent = resultsText;
+            resultPara.classList.add("success");
+        }
+    </script>
+</body>
+</html>
+
