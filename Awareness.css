@@ -1,0 +1,40 @@
+#h1 {
+    font-family: 'Zara-Regular', Arial, sans-serif; /* Use Zara's custom font */
+    margin: 0;
+    color:#2C3E50; /* Dark gray color */
+    padding: 0;
+    background-color: #EAECEE; /* Light gray background */
+}
+
+header {
+    background-color: #2C3E50; /* Dark blue background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 30px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #34495E; /* Darker blue background */
+    overflow: hidden;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* White text */
+    font-weight: bold;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ECF0F1; /* Light gray background */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2C3E50; /* Dark blue background */
+    color: #fff; /* White text */
+}

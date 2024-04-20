@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Awareness</title>
+    <link rel="stylesheet" href="Awareness.css">
+</head>
+<body>
+    <header>
+        <h1 id="h1"> Awareness</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="openNewWindow('index.html')">Home</a></li>
+            <li><a href="#types" onclick="openNewWindow('Types.html')">Types of Vulnerabilities</a></li>
+            <li><a href="#prevention" onclick="openNewWindow('Prevention.html')">Prevention Measures</a></li>
+            <li><a href="#Report Vulnerability Incident" onclick="openNewWindow('incidents.html')">Report Incident</a></li>
+            <li><a href="#Vulnerability Scanning" onclick="openNewWindow('scanner2.html')">Vulnerability Scanning</a></li>
+            <!--<li><a href="#Phishing" onclick="openNewWindow('http://127.0.0.1:5000')">Phishing</a></li>-->
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home" onclick="openNewWindow('home.html')">
+        <h2>Welcome to our Website</h2>
+        <p>Learn how to protect yourself from various kind of web-based vulnerabilities and stay safe online.</p>
+    </section>
+    <section id="types">
+        <h2>Types of Vulnerabilities</h2>
+        <p>Here are some common types of vulnerabilities:</p>
+        <ul>
+            <li>SQL Injection (SQLi)</li>
+            <li>Cross-Site Scripting (XSS)</li>
+            <li>Security Misconfigurations</li>
+            <li>Broken Access Control </li>
+            <li>Insecure Direct Object References (IDOR)</li>
+        </ul>
+    </section>
+   
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have questions or need assistance, please contact us at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Vulnerability Awareness</p>
+    </footer>
+
+    <script>
+        function openNewWindow(url) {
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
