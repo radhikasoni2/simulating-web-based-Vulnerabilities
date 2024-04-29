@@ -99,8 +99,13 @@
         };
 
         function submitForm() {
-            var incident = document.getElementById("incidentInput").value;
-            var prevention = document.getElementById("preventionInput").value;
+            var incident = document.getElementById("incidentInput").value.trim();
+            var prevention = document.getElementById("preventionInput").value.trim();
+
+            if (incident === "" || prevention === "") {
+                alert("Please fill out both Vulnerabilities and Prevention Measures Taken fields.");
+                return;
+            }
 
             var editIndex = document.getElementById("editIndex").value;
 
@@ -145,7 +150,8 @@
                 var cell3 = row.insertCell(2);
                 cell1.innerHTML = info.incident;
                 cell2.innerHTML = info.prevention;
-                cell3.innerHTML = '<button onclick="editEntryForm(' + index + ')">Edit</button>';
+                cell3.innerHTML = '<button onclick="editEntryForm(' + index + ')">Edit</button>' +
+                                  '<button onclick="deleteEntry(' + index + ')">Delete</button>';
             });
         }
 
@@ -170,6 +176,19 @@
 
             // Update the array in local storage
             localStorage.setItem("identityTheftInfo", JSON.stringify(storedInformation));
+        }
+
+        function deleteEntry(index) {
+            // Delete an entry from the stored information
+            var storedInformation = JSON.parse(localStorage.getItem("identityTheftInfo")) || [];
+
+            storedInformation.splice(index, 1);
+
+            // Update the array in local storage
+            localStorage.setItem("identityTheftInfo", JSON.stringify(storedInformation));
+
+            // Refresh the table
+            displayStoredInformation();
         }
 
         function clearForm() {
